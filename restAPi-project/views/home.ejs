@@ -1,0 +1,20 @@
+
+    <h1>Mini Twitter</h1>
+
+<a href="/tweets/new">Create Tweet</a>
+
+<% tweets.forEach(tweet => { %>
+  <div class="card">
+    <h3>@<%= tweet.username %></h3>
+    <p><%= tweet.text %></p>
+
+    <a href="/tweets/<%= tweet.id %>">View</a>
+    <a href="/tweets/<%= tweet.id %>/edit">Edit</a>
+
+    <form action="/tweets/<%= tweet.id %>?_method=DELETE" method="POST">
+      <button>Delete</button>
+    </form>
+  </div>
+<% }) %>
+
+
