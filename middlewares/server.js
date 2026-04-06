@@ -5,12 +5,12 @@ const app = express();
 //* Basic middleware *//
 
 app.use((req, res) => {
-  let { query } = res.query;
+  let { query } = req.query;
+  console.log(query);
   console.log("This is a middleware");
   res.send(
     "I am a middleware and none of your routes will work in fornt of me ",
   );
-  console.log(query);
 });
 
 //* basic requests *//
