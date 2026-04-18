@@ -64,6 +64,22 @@ app.get("/api", (req, res) => {
   res.send("This is a API Endpoint");
 });
 
+//* Error handeling *//
+
+app.get("/error", (req, res) => {
+  sffdfsdf = jdjd;
+});
+
+// Error handeling middlewares
+app.use((err, req, res, next) => {
+  console.log("-----ERROR 1-----");
+  next(err); //ye next error ko next eroor handeling middlewares ko pass krta hai
+});
+
+app.use((err, req, res, next) => {
+  console.log("-----ERROR 2-----");
+  next(err);
+});
 //* Server Listening on port 3000*//
 app.listen(3000, () => {
   console.log("Server is runing on port 3000");
